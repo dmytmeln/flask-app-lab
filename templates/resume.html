@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="about" class="container mt-4">
+    <h2 class="section_title">Про себе</h2>
+    <p>{{ full_name }}, {{ age }} років. Веб-розробник із досвідом роботи на HTML, CSS, JavaScript та Java/Spring.</p>
+</section>
+
+<section id="education" class="container mt-4">
+    <h2 class="section_title">Освіта</h2>
+    <p>Закінчив Марквіський ліцей із золотою медаллю.</p>
+    <p>Навчаюсь на 3 курсі в ПНУ на спеціальності ІПЗ.</p>
+    <p>Закінчив курс від SoftServe Practical Java.</p>
+</section>
+
+<section id="skills" class="container mt-4">
+    <img src="{{ url_for('static', filename='images/stack.jpg') }}" alt="Технології" class="img-fluid skills_img">
+    <h2 class="section_title">Навички</h2>
+    <ul>
+        {% for skill in skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section id="experience" class="container mt-4">
+    <h2 class="section_title">Досвід роботи</h2>
+    <p>Відсутній комерційний досвід роботи. Робота в команді та розробка реальних проєктів в межах навчального гуртка PNUDEV.</p>
+</section>
+{% endblock %}
